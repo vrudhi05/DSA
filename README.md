@@ -1,4 +1,4 @@
-# https-github.com-VrudhiRedekar05-DSA
+# Leetcode Solutions
 
 <!---LeetCode Topics Start-->
 # LeetCode Topics
