@@ -21,6 +21,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0136-single-number](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0136-single-number) |
 | [0992-subarrays-with-k-different-integers](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0992-subarrays-with-k-different-integers) |
 | [1423-maximum-points-you-can-obtain-from-cards](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/1423-maximum-points-you-can-obtain-from-cards) |
 ## Counting
@@ -31,4 +32,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1423-maximum-points-you-can-obtain-from-cards](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/1423-maximum-points-you-can-obtain-from-cards) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0136-single-number](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0136-single-number) |
 <!---LeetCode Topics End-->
