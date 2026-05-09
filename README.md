@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0076-minimum-window-substring](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0076-minimum-window-substring) |
+| [0992-subarrays-with-k-different-integers](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0992-subarrays-with-k-different-integers) |
 ## String
 |  |
 | ------- |
@@ -15,4 +16,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0076-minimum-window-substring](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0076-minimum-window-substring) |
+| [0992-subarrays-with-k-different-integers](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0992-subarrays-with-k-different-integers) |
+## Array
+|  |
+| ------- |
+| [0992-subarrays-with-k-different-integers](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0992-subarrays-with-k-different-integers) |
+## Counting
+|  |
+| ------- |
+| [0992-subarrays-with-k-different-integers](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0992-subarrays-with-k-different-integers) |
 <!---LeetCode Topics End-->
