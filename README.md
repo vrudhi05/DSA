@@ -8,15 +8,18 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0076-minimum-window-substring](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0076-minimum-window-substring) |
 | [0992-subarrays-with-k-different-integers](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0992-subarrays-with-k-different-integers) |
+| [1358-number-of-substrings-containing-all-three-characters](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 ## String
 |  |
 | ------- |
 | [0076-minimum-window-substring](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0076-minimum-window-substring) |
+| [1358-number-of-substrings-containing-all-three-characters](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 ## Sliding Window
 |  |
 | ------- |
 | [0076-minimum-window-substring](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0076-minimum-window-substring) |
 | [0992-subarrays-with-k-different-integers](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/0992-subarrays-with-k-different-integers) |
+| [1358-number-of-substrings-containing-all-three-characters](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 | [1423-maximum-points-you-can-obtain-from-cards](https://github.com/VrudhiRedekar05/https-github.com-VrudhiRedekar05-DSA/tree/master/1423-maximum-points-you-can-obtain-from-cards) |
 ## Array
 |  |
