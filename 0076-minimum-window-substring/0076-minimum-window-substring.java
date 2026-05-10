@@ -1,44 +1,40 @@
 class Solution {
     public String minWindow(String s, String t) {
+        int n = s.length();
+        if(t.length() > n){
+            return "";
+        }
 
+        int i=0,j=0,start=0;
+        int minWindowSize = Integer.MAX_VALUE;
         int[] freq = new int[128];
+        int reqCount = t.length();
 
-        // store frequency of t
-        for (char c : t.toCharArray()) {
-            freq[c]++;
+        for(char ch : t.toCharArray()){
+            freq[ch]++; //store the chars of t
         }
 
-        int left = 0, count = t.length();
-        int minLen = Integer.MAX_VALUE;
-        int start = 0;
-
-        for (int right = 0; right < s.length(); right++) {
-
-            // include character
-            if (freq[s.charAt(right)]-- > 0) {
-                count--;
+        while(j < n){
+            char ch = s.charAt(j); //keep storing the chars of s
+            if(freq[ch] > 0){
+                reqCount--; //decrease the count when the freq of char is > 0
             }
+            freq[ch]--; //either decrease the count of already existing or decrease the count of chars which are not present in t, as we don't need them
 
-            // valid window
-            while (count == 0) {
-
-                // apply your formula here
-                if (right - left + 1 < minLen) {
-                    minLen = right - left + 1;
-                    start = left;
+            while(reqCount == 0){ //shrink the window
+                if(minWindowSize > (j-i+1)){
+                    minWindowSize = j-i+1;
+                    start=i;
                 }
 
-                // remove left character
-                if (freq[s.charAt(left)]++ == 0) {
-                    count++;
+                freq[s.charAt(i)]++;
+                if(freq[s.charAt(i)] > 0){
+                    reqCount++;
                 }
-
-                left++;
+                i++;
             }
+            j++;
         }
-
-        return minLen == Integer.MAX_VALUE 
-                ? "" 
-                : s.substring(start, start + minLen);
+        return minWindowSize == Integer.MAX_VALUE ? "" : s.substring(start,start+minWindowSize); //start, start+till the minwindowsize
     }
 }
