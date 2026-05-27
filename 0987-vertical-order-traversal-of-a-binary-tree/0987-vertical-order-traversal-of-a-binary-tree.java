@@ -15,85 +15,55 @@
  */
 class Solution {
 
-    class Pair {
+    TreeMap<Integer,  //columns
+    TreeMap<Integer,PriorityQueue<Integer>>> mp;   //rows -> PriorityQueue
 
-        TreeNode node;
-        int row;
-        int col;
-
-        Pair(TreeNode node, int row, int col) {
-            this.node = node;
-            this.row = row;
-            this.col = col;
+    public void dfs(TreeNode root, int row, int col){
+        if(root == null){
+            return;
         }
+
+        //create the column if absent
+        if(!mp.containsKey(col)){
+            mp.put(col, new TreeMap<>());
+        }
+
+        //create the row if absent
+        if(!mp.get(col).containsKey(row)){
+            mp.get(col).put(row,new PriorityQueue<>());
+        }
+
+        mp.get(col).get(row).offer(root.val);  //insert the node's value
+
+        //go towards the left
+        dfs(root.left,row+1,col-1);
+
+        //go towards the right
+        dfs(root.right,row+1,col+1);
     }
 
     public List<List<Integer>> verticalTraversal(TreeNode root) {
 
+        mp = new TreeMap<>();
+
         List<List<Integer>> ans = new ArrayList<>();
 
-        if (root == null) {
-            return ans;
+        if(root == null){
+            return ans; //base case
         }
 
-        TreeMap<Integer,
-                TreeMap<Integer, PriorityQueue<Integer>>> map
-                = new TreeMap<>();
+        dfs(root,0,0);
 
-        Queue<Pair> q = new LinkedList<>();
+        for(TreeMap<Integer,PriorityQueue<Integer>> rows : mp.values()){  //traverse the columns
+            List<Integer> subList = new ArrayList<>();
 
-      
-        q.add(new Pair(root, 0, 0));
-
-        while (!q.isEmpty()) {
-
-            Pair p = q.remove();
-
-            TreeNode curr = p.node;
-            int row = p.row;
-            int col = p.col;
-
-            
-            if (!map.containsKey(col)) {
-                map.put(col, new TreeMap<>());
-            }
-
-            
-            if (!map.get(col).containsKey(row)) {
-                map.get(col).put(row, new PriorityQueue<>());
-            }
-
-            
-            map.get(col).get(row).add(curr.val);
-
-            // left child
-            if (curr.left != null) {
-                q.add(new Pair(curr.left, row + 1, col - 1));
-            }
-
-            // right child
-            if (curr.right != null) {
-                q.add(new Pair(curr.right, row + 1, col + 1));
-            }
-        }
-
-        // traverse columns
-        for (TreeMap<Integer, PriorityQueue<Integer>> rows : map.values()) {
-
-            List<Integer> list = new ArrayList<>();
-
-            // traverse rows
-            for (PriorityQueue<Integer> pq : rows.values()) {
-
-                // sorted values
-                while (!pq.isEmpty()) {
-                    list.add(pq.poll());
+            for(PriorityQueue<Integer> pq : rows.values()){  //traverse the rows
+                while(!pq.isEmpty()){  //pop until pq is empty
+                    subList.add(pq.poll());
                 }
             }
-
-            ans.add(list);
+            ans.add(subList);
         }
-
         return ans;
     }
 }
