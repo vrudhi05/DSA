@@ -14,9 +14,9 @@ class Solution {
             maxFreq = Math.max(freq.get(nums[i]),maxFreq);
         }
         int minLen = Integer.MAX_VALUE;
-        for(int i=0;i<n;i++){
-            if(freq.get(nums[i]) == maxFreq){
-                int len = (last.get(nums[i])-first.get(nums[i]))+1;
+        for(int num : freq.keySet()){
+            if(freq.get(num) == maxFreq){
+                int len = (last.get(num)-first.get(num))+1;
                 minLen = Math.min(minLen,len);
             }
         }
