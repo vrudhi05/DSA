@@ -17,9 +17,6 @@ class Solution {
                 }
             }
         }
-        int[] ans = new int[2];
-        ans[0] = repeatedEle;
-        ans[1] = reqSum-sum;
-        return ans;
+        return new int[]{repeatedEle, reqSum-sum};
     }
 }
