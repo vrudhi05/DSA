@@ -14,11 +14,17 @@
  * }
  */
 class Solution {
+    int depth = 0;
+    public void traverse(TreeNode node, int cnt){
+        if(node == null){
+            return;
+        }
+        depth = Math.max(depth,cnt);
+        traverse(node.left,cnt+1);
+        traverse(node.right,cnt+1);
+    }
     public int maxDepth(TreeNode root) {
-        if(root == null) return 0;
-
-        int lh = maxDepth(root.left);
-        int rh = maxDepth(root.right);
-        return 1+Math.max(lh,rh);
+        traverse(root,1);
+        return depth;
     }
 }
