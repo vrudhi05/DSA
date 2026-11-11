@@ -14,31 +14,24 @@
  * }
  */
 class Solution {
-    int result = Integer.MIN_VALUE;
-    public int solve(TreeNode root){
-        if(root == null){
+    int maxSum = Integer.MIN_VALUE;
+    public int pathsum(TreeNode node){
+        if(node == null){
             return 0;
         }
-        int left = solve(root.left);
-        int right = solve(root.right);
+        int left = pathsum(node.left);
+        int right = pathsum(node.right);
 
-        int check_if_this_is_max = left + right + root.val;
-        int check_if_only_one = Math.max(left,right) + root.val;
-        int if_only_root = root.val;
-        result = Math.max(
-            result,
-            Math.max(
-                check_if_this_is_max,
-                Math.max(check_if_only_one, if_only_root)
-            )
-        );
-        return Math.max(check_if_only_one , if_only_root);
+        int all_good = node.val+left+right; //1
+        int both_good = node.val+Math.max(left,right); //2
+        int only_one_good = node.val; //3
+
+        maxSum = Math.max(maxSum,Math.max(all_good,
+        Math.max(both_good,only_one_good)));
+        return Math.max(both_good,only_one_good);
     }
     public int maxPathSum(TreeNode root) {
-        if(root == null){
-            return 0;
-        }
-        solve(root);
-        return result;
+        pathsum(root);
+        return maxSum;
     }
 }
