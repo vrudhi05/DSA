@@ -19,31 +19,29 @@ class Solution {
         if(root == null){
             return list;
         }
-        
-        int count = 1;
-        Queue<TreeNode> que = new LinkedList<>();
-        que.add(root);
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        int cnt = 1;
 
-        while(!que.isEmpty()){
-            int size = que.size();
+        while(!q.isEmpty()){
+            int size1 = q.size();
             List<Integer> subList = new ArrayList<>();
-            for(int i=0;i<size;i++){
-                TreeNode node = que.poll();
-                if(count % 2 == 0){
-                    subList.add(0,node.val);
+            for(int i=0;i<size1;i++){
+                TreeNode temp = q.remove();
+                if(cnt % 2 == 0){
+                    subList.add(0,temp.val);
                 }
                 else{
-                    subList.add(node.val);
+                    subList.add(temp.val);
                 }
-
-                if(node.left != null){
-                    que.add(node.left);
+                if(temp.left != null){
+                    q.offer(temp.left);
                 }
-                if(node.right != null){
-                    que.add(node.right);
+                if(temp.right != null){
+                    q.offer(temp.right);
                 }
             }
-            count += 1;
+            cnt += 1;
             list.add(subList);
         }
         return list;
