@@ -16,7 +16,7 @@ class Solution {
         ListNode fut = curr.next;
         curr.next = prev;
         prev = curr;
-        return reverse(curr,fut);
+        return reverse(prev,fut);
     }
     public ListNode reverseList(ListNode head) {
         if(head == null){
