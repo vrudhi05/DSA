@@ -13,19 +13,13 @@ class Solution {
         if(head == null){
             return null;
         }
-        int cnt=1;
-        ListNode curr = head;
-        while(curr != null){
-            cnt++;
-            curr = curr.next;
+        ListNode slow = head;
+        ListNode fast = head;
+        //fast & slow pointer's approach
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        int target = Math.ceilDiv(cnt, 2); 
-        curr = head;
-        cnt=1;
-        while(cnt != target){
-            curr = curr.next;
-            cnt++;
-        }
-        return curr;
+        return slow;
     }
 }
